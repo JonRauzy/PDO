@@ -19,6 +19,7 @@ function getAllPosts($db){
 // on a qu'un résultat alors on fait juste fetch() et qui va dans un seul tableau associatif :
 function getOneCategory($db, $id){
     $statement = $db->query("SELECT * FROM category WHERE id=$id");
+    $statement->closeCursor();
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 

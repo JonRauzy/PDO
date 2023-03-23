@@ -26,6 +26,7 @@
                         echo "<p>TITLE : " . $item['title'] . "</p><br>";
                         echo "<p>Contenu : </p><br><p>" . $item['content'] . "</p><br>";
                     }
+
                 }
                 ?>
                        
