@@ -22,6 +22,8 @@
         <?php var_dump($allCategories); ?>
         <hr>
         <?php var_dump($allPosts); ?>
+        <hr>
+        <?php var_dump($oneUserByName); ?>
     </body>
 </html>
 
