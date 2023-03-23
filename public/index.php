@@ -14,7 +14,11 @@ try{
     die($e->getMessage());    
 }
 
-var_dump(recup($db));
+
+$allPosts = getAllPosts($db);
+$allCategories = getAllCategories($db);
+$oneCategory = getOneCategory($db,1);
+include_once '../view/view.php';
 
 // deconnexion :
-// $db = null;                       
+$db = null;                       
