@@ -3,10 +3,10 @@
 // ATT : fetch(PDO::) renvois false si il est vide / alors qu'il renvoie null en mysqli
 
 // on a plein de résultats alors on fait fetchall() et qui va dans un seul tableau associatif :
-function getAllCategories($db){
-    $statement = $db->query("SELECT * FROM category ORDER BY title ASC;");
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
+// function getAllCategories($db){
+//     $statement = $db->query("SELECT * FROM category ORDER BY title ASC;");
+//     return $statement->fetchAll(PDO::FETCH_ASSOC);
+// }
 
 
 function getAllPosts($db){

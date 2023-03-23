@@ -16,7 +16,7 @@ try{
 
 
 $allPosts = getAllPosts($db);
-$allCategories = getAllCategories($db);
+// $allCategories = getAllCategories($db);
 $oneCategory = getOneCategory($db,1);
 $oneUserByName = getUserByUserName($db);
 

@@ -8,22 +8,36 @@
     </head>
     <body>
         <h1>PDO</h1>
+            
 
-            <?php if(!empty($allPosts) && !empty($allCategories) && !empty($oneCategory)):?>
-                <p>salut</p>
-            <?php else: ?>
-                <p>aurevoir</p>
-            <?php endif; ?>
+            <h2>affichage méthode while() et toutes les categories (degolasse) :</h2>
+                <?php 
+                $allCategories = $db->query("SELECT * FROM category ORDER BY title ASC;");
+                while($item = $allCategories->fetch(PDO::FETCH_ASSOC)){
+                    echo "<p>ID: ". $item['id'] . "</p>";
+                }
+                ?>
+                
 
+            <h2>affichage avec findall() et tout les posts : </h2>
+                <?php 
+                if(!empty($allPosts)){
+                    foreach($allPosts as $item){
+                        echo "<p>TITLE : " . $item['title'] . "</p><br>";
+                        echo "<p>Contenu : </p><br><p>" . $item['content'] . "</p><br>";
+                    }
+                }
+                ?>
+                       
 
         <!-- var dump frere : -->
-        <?php var_dump($oneCategory); ?>
+        <!-- <?php var_dump($oneCategory); ?>
         <hr>
         <?php var_dump($allCategories); ?>
         <hr>
         <?php var_dump($allPosts); ?>
         <hr>
-        <?php var_dump($oneUserByName); ?>
+        <?php var_dump($oneUserByName); ?> -->
     </body>
 </html>
 
