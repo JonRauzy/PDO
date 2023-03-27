@@ -35,22 +35,7 @@
 
                 }
                 ?>
-                       
 
-
-            <?php 
-
-            if(isset($_POST['title']) && isset($_POST['content'])){
-                $title = $_POST['title'];
-                $content = $_POST['content'];
-                $sqlInsert = "INSERT INTO `post` (`title`, `content`, `user_id`) VALUES ('$title','$content',1)";
-                $db->exec($sqlInsert);
-                // exec() renvois le nombre d'entrées INSERT en plus d'execution la requête ala
-            }
-            
-            
-
-            ?>
 
 
         

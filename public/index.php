@@ -15,6 +15,11 @@ try{
 }
 
 
+if(isset($_POST['title']) && isset($_POST['content'])){
+    $insert = insert($db);
+} 
+
+
 $allPosts = getAllPosts($db);
 // $allCategories = getAllCategories($db);
 $oneCategory = getOneCategory($db,1);

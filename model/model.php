@@ -23,7 +23,7 @@ function getAllPosts($db){
 
 // on a qu'un résultat alors on fait juste fetch() et qui va dans un seul tableau associatif :
 function getOneCategory($db, $id){
-    
+           
 }
 
 
@@ -32,4 +32,13 @@ function getUserByUserName($db) {
     FROM `user` 
     WHERE `username`='andrepalmisano';");
     return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+
+function insert($db){
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $sqlInsert = "INSERT INTO `post` (`title`, `content`, `user_id`) VALUES ('$title','$content',1)";
+    $db->exec($sqlInsert);
+                
 }
