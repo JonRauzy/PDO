@@ -23,7 +23,7 @@ function getAllPosts($db){
 
 // on a qu'un résultat alors on fait juste fetch() et qui va dans un seul tableau associatif :
 function getOneCategory($db, $id){
-           
+    
 }
 
 
