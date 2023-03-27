@@ -8,7 +8,13 @@
     </head>
     <body>
         <h1>PDO</h1>
-            
+        
+        <h2>on va insérer</h2>
+        <form action="" method="POST">
+            <input type="text" placeholder="title" name="title"><br>
+            <input type="text" name="content" placeholder="content">
+            <input type="submit">
+        </form>
 
             <h2>affichage méthode while() et toutes les categories (degolasse) :</h2>
                 <?php 
@@ -31,6 +37,23 @@
                 ?>
                        
 
+
+            <?php 
+
+            if(isset($_POST['title']) && isset($_POST['content'])){
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $sqlInsert = "INSERT INTO `post` (`title`, `content`, `user_id`) VALUES ('$title','$content',1)";
+                $db->exec($sqlInsert);
+                // exec() renvois le nombre d'entrées INSERT en plus d'execution la requête ala
+            }
+            
+            
+
+            ?>
+
+
+        
         <!-- var dump frere : -->
         <!-- <?php var_dump($oneCategory); ?>
         <hr>
