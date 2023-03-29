@@ -10,10 +10,9 @@
         <h1>PDO</h1>
             <?php 
 
-
             $debut="2023-02-12";
             $fin="2023-03-27 14:30";
-            $sqleu = "SELECT * FROM `post` ;"; 
+            $sqleu = "SELECT * FROM `post` WHERE `datecreate` > ? AND `datecreate` < ?;"; 
             // "?" est un marqueur
             
             $prepare = $db->prepare($sqleu);
