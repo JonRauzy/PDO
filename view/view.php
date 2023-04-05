@@ -60,6 +60,36 @@
             <p>oui</p>
 
 
+
+            <h2>transactions</h2>
+            <?php
+
+            $db -> beginTransaction();
+            $sql1 = "INSERT INTO post (title, content, user_id) VALUES (?,?,?)";
+            $title = "patate";
+            $content = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis harum earum eveniet obcaecati tempore provident mollitia nemo porro molestiae facere voluptatem voluptatibus molestias iste commodi id voluptates, vero reiciendis vitae.";
+            $userID = 3;
+
+            $prepare1 = $db -> prepare($sql1);
+            $prepare1->bindParam(1,$title, PDO::PARAM_STR);
+            $prepare1->bindParam(2,$content, PDO::PARAM_STR);
+            $prepare1->bindParam(3,$userID, PDO::PARAM_INT);
+
+            $prepare1 -> execute();
+            
+            try{
+                $db->commit(); 
+                // validatiàon de la transaction
+            }catch(Exception $e){
+                //bonne pratique mais pas obligatoire pour mysql mariadb
+                $db ->rollBack();
+                die($e -> getMessage());
+            }
+            
+            ?>
+
+
+
         
         <!-- var dump frere : -->
         <!-- <?php var_dump($oneCategory); ?>
